@@ -3,7 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '@esri/calcite-components/dist';
+import '@esri/calcite-components';
+import '@esri/calcite-components/dist/calcite/calcite.css';
 
+import { applyPolyfills, defineCustomElements } from '@esri/calcite-components/dist/loader';
+
+(async function init(): Promise<void> {
+  await applyPolyfills();
+  defineCustomElements(window);
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -15,3 +23,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+})();
