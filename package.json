@@ -2,6 +2,7 @@
   "name": "inspections-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://coraleigh.github.io/inspection-scheduler/dist/",
   "dependencies": {
     "@arcgis/core": "^4.19.0-next.20210407",
     "@azure/msal-browser": "^2.14.0",
@@ -22,6 +23,8 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "npm run copyIcons && react-scripts start",
     "build": "react-scripts build",
     "copyIcons": "find node_modules/@esri/calcite-components/dist/calcite/assets/ -iname \\*.json -exec cp {} ./public/assets/calcite-icon/ \\;",
